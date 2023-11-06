@@ -27,7 +27,7 @@ M.ui = {
        polish_hl = {
           -- too much red by default
           ["@field"] = { fg = "#a7aebb" },
-          ["@parameter"] = { fg = "#829d92" },
+          ["@parameter"] = { fg = "#98b7c3" },
        },
      },
      -- chocolate = {
