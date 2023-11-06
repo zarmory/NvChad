@@ -24,6 +24,11 @@ M.ui = {
          base00 = "#262626",  -- our konsole bg
          base02 = "#2f2f2f",
        },
+       polish_hl = {
+          -- too much red by default
+          ["@field"] = { fg = "#a7aebb" },
+          ["@parameter"] = { fg = "#829d92" },
+       },
      },
      -- chocolate = {
      --   -- copied from onedark theme
