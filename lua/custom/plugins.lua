@@ -47,6 +47,24 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "debugloop/telescope-undo.nvim"
+    },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          undo = {
+            use_delta = true,
+            diff_context_lines = 10,
+          },
+        },
+      })
+    end,
+  },
+
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
