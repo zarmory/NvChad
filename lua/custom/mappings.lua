@@ -11,6 +11,9 @@ M.general = {
   v = {
     [">"] = { ">gv", "indent"},
   },
+  i = {
+    ["<F5>"] = { "<cmd> Telescope undo<CR>", "Show undo history" },
+  },
 }
 
 -- more keybinds!
