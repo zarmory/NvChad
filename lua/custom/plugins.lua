@@ -66,6 +66,8 @@ local plugins = {
   },
   ]]
 
+  -- This needs further understanding / refactoring
+  -- See https://github.com/debugloop/telescope-undo.nvim/issues/38#issuecomment-1801229149
   {
     "debugloop/telescope-undo.nvim",
     dependencies = {
