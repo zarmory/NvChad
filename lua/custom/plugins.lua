@@ -88,12 +88,14 @@ local plugins = {
       },
     },
     config = function(_, opts)
-      opts.defaults.mappings = {
-        i = {
-          ['<c-y>'] = require('telescope-undo.actions').yank_deletions,
-          ['<c-r>'] = require('telescope-undo.actions').restore,
-        },
-      }
+      -- Disabled as per https://github.com/debugloop/telescope-undo.nvim/issues/38#issuecomment-1807988016
+      -- These are defaults anyway
+      -- opts.defaults.mappings = {
+      --   i = {
+      --     ['<c-y>'] = require('telescope-undo.actions').yank_deletions,
+      --     ['<c-r>'] = require('telescope-undo.actions').restore,
+      --   },
+      -- }
       require("telescope").setup(opts)
       require("telescope").load_extension("undo")
     end,
