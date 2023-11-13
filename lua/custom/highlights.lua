@@ -9,6 +9,10 @@ M.override = {
   Comment = {
     italic = true,
   },
+  DiffChange = {
+    -- The default is too pale
+    fg = "#e6c686",
+  },
 }
 
 ---@type HLTable
