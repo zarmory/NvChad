@@ -47,6 +47,7 @@ local plugins = {
     end,
   },
 
+  --[[
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -63,14 +64,47 @@ local plugins = {
       })
     end,
   },
+  ]]
+
+  {
+    "debugloop/telescope-undo.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+          { "nvim-lua/plenary.nvim" },
+        },
+      },
+    },
+    keys = {
+      { "<F5>", "<cmd>Telescope undo<cr>", desc = "undo history", },
+    },
+    opts = {
+      extensions = {
+        undo = {
+          side_by_side = true,
+          use_delta = true,
+        },
+      },
+    },
+    config = function(_, opts)
+      opts.defaults.mappings = {
+        i = {
+          ['<c-y>'] = require('telescope-undo.actions').yank_deletions,
+          ['<c-r>'] = require('telescope-undo.actions').restore,
+        },
+      }
+      require("telescope").setup(opts)
+      require("telescope").load_extension("undo")
+    end,
+  },
 
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
-  }
-
+  },
 
   -- To make a plugin not be loaded
   -- {
