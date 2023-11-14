@@ -48,17 +48,20 @@ M.ui = {
   statusline = {
     theme = "vscode_colored",
     overriden_modules = function(modules)
-         -- drop the curly brackets
-         modules[11] = (function()
-           local function stbufnr()
-             return vim.api.nvim_win_get_buf(vim.g.statusline_winid)
-           end
-           local ft = vim.bo[stbufnr()].ft
-           return ft == "" and "%#St_ft# plain text  " or "%#St_ft#" .. ft .. " "
-         end)()
+      modules[9] = (function()
+        return "%#StText#%p%% Ln %l, Col %c "
+      end)()
+      -- drop the curly brackets
+      modules[11] = (function()
+        local function stbufnr()
+          return vim.api.nvim_win_get_buf(vim.g.statusline_winid)
+        end
+        local ft = vim.bo[stbufnr()].ft
+        return ft == "" and "%#St_ft# plain text  " or "%#St_ft#" .. ft .. " "
+      end)()
 
-         -- Don't show file encoding. You can always see it with `set fileencoding'.
-         table.remove(modules, 10)
+      -- Don't show file encoding. You can always see it with `set fileencoding'.
+      table.remove(modules, 10)
     end,
   },
 }
