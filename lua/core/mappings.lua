@@ -80,17 +80,13 @@ M.tabufline = {
   n = {
     -- cycle through buffers
     ["<tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflineNext()
-      end,
-      "Goto next buffer",
+      "<cmd> tabNext<cr>",
+      "Goto to the next tab",
     },
 
     ["<S-tab>"] = {
-      function()
-        require("nvchad.tabufline").tabuflinePrev()
-      end,
-      "Goto prev buffer",
+      "<cmd> tabprevious<cr>",
+      "Goto to the prev tab",
     },
 
     -- close buffer + hide terminal buffer
