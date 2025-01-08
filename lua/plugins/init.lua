@@ -161,6 +161,7 @@ local default_plugins = {
       },
 
       -- autopairing of (){}[] etc
+      --[[
       {
         "windwp/nvim-autopairs",
         opts = {
@@ -175,6 +176,7 @@ local default_plugins = {
           require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
       },
+      ]] 
 
       -- cmp sources plugins
       {
